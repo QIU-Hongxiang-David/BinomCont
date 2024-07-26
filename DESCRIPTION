@@ -1,0 +1,11 @@
+Package: BinomCont
+Type: Package
+Title: Family Object for Logistic Regression with Continuous Outcomes
+Version: 0.1.0
+Author: Hongxiang Qiu <david940408@gmail.com>
+Maintainer: Hongxiang Qiu <david940408@gmail.com>
+Description: A family object that can be used to fit a binomial model (e.g., logistic model) when the outcome may be continuous and fall outside the unit interval.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.3.2
