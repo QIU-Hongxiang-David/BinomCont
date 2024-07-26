@@ -58,8 +58,8 @@ clip_interval<-function(x,lower=-Inf,upper=Inf){
 #' y <- expit(1 + X[,1]) + rnorm(10)
 #' library(SuperLearner)
 #' SuperLearner(y, data.frame(X), family=binomial_continuous(), SL.library = c("SL.glm", "SL.ipredbagg"), cvControl = list(V = 2))
-#' #Error in SL.ipredbagg
-#' SuperLearner(y, data.frame(X), family=binomial_continuous(family="binomial"), SL.library = c("SL.glm", "SL.ipredbagg"), cvControl = list(V = 2))
+#' # Error in SL.ipredbagg
+#' SuperLearner(y, data.frame(X), family = binomial_continuous(family = "binomial"), SL.library = c("SL.glm", "SL.ipredbagg"), cvControl = list(V = 2))
 #'
 #'
 #' @export
