@@ -35,6 +35,7 @@ This function tweaks basic family objects and might remove some safety features.
 }
 
 \examples{
+set.seed(123)
 expit <- binomial()$linkinv
 
 # glm
@@ -48,8 +49,8 @@ try(glm(y~x, family = gaussian(link = "logit")), outFile=stdout())
 try(glm(y~x, family = quasi(link = "logit", variance = "constant")), outFile=stdout())
 
 #glmnet
-X <- matrix(rnorm(100 * 10), nrow = 100)
-y <- expit(1 + X[,1]) + rnorm(10)
+X <- matrix(rnorm(100 * 5), nrow = 100)
+y <- expit(1 + X[,1]) + rnorm(100)
 glmnet::glmnet(X, y, family = binomial_continuous()) # or family=binomial_continuous; cannot use family="binomial_continuous"
 # Errors
 try(glmnet::glmnet(X, y, family = binomial()), outFile=stdout())
@@ -68,7 +69,7 @@ y <- expit(1 + X[,1]) + rnorm(10)
 library(SuperLearner)
 SuperLearner(y, data.frame(X), family=binomial_continuous(), SL.library = c("SL.glm", "SL.ipredbagg"), cvControl = list(V = 2))
 #Error in SL.ipredbagg
-SuperLearner(y, data.frame(X), family=binomial(), SL.library = c("SL.glm", "SL.ipredbagg"), cvControl = list(V = 2))
+SuperLearner(y, data.frame(X), family=binomial_continuous(family="binomial"), SL.library = c("SL.glm", "SL.ipredbagg"), cvControl = list(V = 2))
 
 
 }
